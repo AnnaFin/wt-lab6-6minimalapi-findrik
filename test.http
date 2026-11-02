@@ -1,0 +1,38 @@
+### 1. Проверка корня
+GET http://0.0.0.0:10000
+
+### 2. Получить все задачи
+GET http://0.0.0.0:10000/api/tasks
+
+### 3. Получить задачу по ID (Существующую)
+GET http://0.0.0.0:10000/api/tasks/2
+
+### 4. Получить задачу по ID (Несуществующую - 404)
+GET http://0.0.0.0:10000/api/tasks/999
+
+### 5. Создать задачу (POST)
+POST http://0.0.0.0:10000/api/tasks
+Content-Type: application/json
+
+{
+  "title": "Написать тесты",
+  "projectName": "QA Automation",
+  "priority": "Medium",
+  "estimatedHours": 12,
+  "isCompleted": false
+}
+
+### 6. Обновить задачу (PUT)
+PUT http://0.0.0.0:10000/api/tasks/2
+Content-Type: application/json
+
+{
+  "title": "Дизайн обновлен",
+  "projectName": "CRM System",
+  "priority": "High",
+  "estimatedHours": 25,
+  "isCompleted": true
+}
+
+### 7. Удалить задачу (DELETE)
+DELETE http://0.0.0.0:10000/api/tasks/2
